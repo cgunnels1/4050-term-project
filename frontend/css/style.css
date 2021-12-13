@@ -1,0 +1,97 @@
+/*import fonts from google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
+
+:root{
+    --font-family: 'IBM Plex Serif', serif;
+    --primary-color: white;
+    --border: black;
+    --textcolor: gray;
+    --contrastcolor: lavenderblush;
+}
+
+.primary-color{
+    color:var(--primary-color);
+}
+
+.bg-primary-color{
+    background-color: var(--contrastcolor);
+}    
+
+.text-color{
+    color:var(textcolor);
+}
+
+.contrast-color{
+    color:var(--contrastcolor);
+}
+
+.font-serfi{
+    font-family:var(--font-family);
+}
+
+header{
+    background-color: var(--border);
+}
+
+.container.dropdown-toggle,
+.container.dropdown-toggle-item{
+    margin-top: 50px;
+    font-size: 0.7em;
+    color: var(--primary-color);
+}
+.header-links a{
+    font-size: 0.9em;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+
+.button {
+    border: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+ 
+ 
+.button1 {margin-bottom: 200px;} /* Green */
+.button2 {margin-top: 200px;} /* Blue */
+
+.full-width-div {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.nav {
+    float: left;
+    font: bold 12px Arial, Helvetica, Sans-serif;
+    border: 1px solid #121314;
+    border-top: 1px solid #2b2e30;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 0px;
+    overflow: hidden;
+    width:100%;
+
+}
+
+.price-label{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:small;
+    position:relative;
+    bottom:-6px;
+    vertical-align:bottom;
+}
+
+
+.required::after{
+ content:" *";
+ color: red;
+  }
+
+  

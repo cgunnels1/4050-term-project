@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Book</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/admin/AdminPortal}">Admin Portal
+					</a>
+			</div>
+		</div>
+	</nav>
+
+	<br>
+	<br>
+	<!-- Create HTML registration form -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+
+				<!-- success message -->
+				<div th:if="${param.success}">
+					<div class="alert alert-info">Book successfully added!</div>
+				</div>
+
+				<h1>addBook</h1>
+
+				<form th:action="@{/admin/addBook}" method="post" th:object="${book}">
+					
+					<div class="form-group">
+						<label class="control-label" for="title"> Title </label> <input
+							id="title" class="form-control" th:field="*{title}" required
+							autofocus="autofocus" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="authors"> Authors </label> <input
+							id="authors" class="form-control" th:field="*{authors}" required
+							autofocus="autofocus" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="category"> Category </label> <input
+							id="category" class="form-control" th:field="*{category}" required
+							autofocus="autofocus" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="edition"> Edition </label> <input
+							id="edition" class="form-control" th:field="*{edition}" required
+							autofocus="autofocus" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="publisher"> Publisher </label> <input
+							id="publisher" class="form-control" th:field="*{publisher}" required
+							autofocus="autofocus" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="publicationYear"> PublicationYear </label> <input
+							id="publicationYear" class="form-control" th:field="*{publicationYear}" required
+							autofocus="autofocus" />
+					</div>
+					
+					
+					<div class="form-group">
+						<label class="control-label" for="stockQuantity"> StockQuantity </label> <input
+							id="stockQuantity" class="form-control" th:field="*{stockQuantity}" required
+							autofocus="autofocus" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="minimumThreshold"> MinimumThreshold </label> <input
+							id="minimumThreshold" class="form-control" th:field="*{minimumThreshold}" required
+							autofocus="autofocus" />
+					</div>
+					
+					
+					
+					<div class="form-group">
+						<label class="control-label" for="buyingPrice"> Buying Price </label> <input
+							id="buyingPrice" class="form-control" th:field="*{buyingPrice}" required
+							autofocus="autofocus" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="sellingPrice"> Selling Price </label> <input
+							id="sellingPrice" class="form-control" th:field="*{sellingPrice}" required
+							autofocus="autofocus" />
+					</div>
+
+
+					<div class="form-group">
+						<button type="submit" class="btn btn-success">Add Book</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

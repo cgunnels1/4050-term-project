@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Books</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">Home
+					</a>
+			</div>
+		</div>
+	</nav>
+
+<br>
+<br>
+	<!-- Create HTML registration form -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+
+				<!-- success message -->
+				<div th:if="${param.success}">
+					<div class="alert alert-info">You've successfully registered
+						to our awesome app!</div>
+				</div>
+				
+				<div th:if="${param.error}">
+					<div class="alert alert-info">An Account with that email already exists</div>
+				</div>
+
+				<h1>View Book</h1>
+				
+<ul>
+<li>Book Name: <label class="control-label" for="title" th:text="${bookDto.title}"> </label></li>
+<li>Genre: <label class="control-label" for="category" th:text="${bookDto.category}"> </label></li>
+<li>Publisher: <label class="control-label" for="publisher" th:text="${bookDto.publisher}"> </label></li>
+<li>Edition: <label class="control-label" for="edition" th:text="${bookDto.edition}"> </label></li>
+<li>Publication Year: <label class="control-label" for="publicationYear" th:text="${bookDto.publicationYear}"> </label></li>
+<li>Price: <label class="control-label" for="sellingPrice" th:text="${bookDto.sellingPrice}"> </label></li>
+</ul>
+
+			</div>
+			
+			<form th:action="@{'/viewBooks/' + ${bookDto.bookID}}" method="post">
+			<div class="form-group">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<input type="submit" name="submit" id="submit"
+									class="form-control btn btn-primary" value="Submit" />
+							</div>
+						</div>
+					</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+/*import fonts from google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
+
+:root{
+    --font-family: 'IBM Plex Serif', serif;
+    --primary-color: darkolivegreen;
+    --border: wheat;
+    --textcolor: gray;
+    --contrastcolor: lavenderblush;
+}
+
+.primary-color{
+    color:var(--primary-color);
+}
+
+.bg-primary-color{
+    background-color: var(--contrastcolor);
+}    
+
+.text-color{
+    color:var(textcolor);
+}
+
+.contrast-color{
+    color:var(--contrastcolor);
+}
+
+.font-serfi{
+    font-family:var(--font-family);
+}
+
+header{
+    background-color: var(--border);
+}
+
+.container.dropdown-toggle,
+.container.dropdown-toggle-item{
+    font-size: 0.7em;
+    color: var(--primary-color);
+}
+.header-links a{
+    font-size: 0.9em;
+    text-decoration: none;
+    color: var(--primary-color);
+}

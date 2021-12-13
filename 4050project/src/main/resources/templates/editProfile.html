@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Profile</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+	
+</head>
+<body>
+
+	<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">Edit Profile
+					Module</a>
+			</div>
+		</div>
+	</nav>
+	
+	<br>
+	<br>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-md-6 col-md-offset-3">
+			
+			<ul>
+<li>First Name: <label class="control-label" for="firstName" th:text="${profileInfo.firstName}"> </label></li>
+				
+				<h1> Edit Profile Page </h1>
+				<form th:action="@{/editProfile}" method="post" th:object="${user}">
+					
+					<!-- error message -->
+					<div th:if="${param.error}">
+						<div class="alert alert-danger">Invalid username or
+							password.</div>
+					</div>
+				
+					<!-- logout message -->
+					<div th:if="${param.logout}">
+						<div class="alert alert-info">You have been logged out.</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="email" th:text="${profileInfo.email}"> </label> <input
+							id="email" class="form-control" th:field="*{email}" required
+							autofocus="autofocus" />
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label" for="firstName"> First Name </label> <input
+							id="firstName" class="form-control" th:field="*{firstName}" required
+							autofocus="autofocus" />
+					</div>
+
+					<div class = "form-group">
+						<label for ="lastname"> last name </label> :
+						<input type="text" class = "form-control" id ="lastname" name = "lastname"
+						placeholder="Enter last name" autofocus="autofocus">
+					</div>
+					
+					<div class="form-group">
+						<label for="password">Password</label>: <input type="password"
+							id="password" name="password" class="form-control"
+							placeholder="Enter Password" />
+					</div>
+					
+					<div class="form-group">
+						<label for="billingAddress">Billing Address</label>: <input type="billingAddress"
+							id="billingAddress" name="billingAddress" class="form-control"
+							placeholder="Ex: 123 Lumpkin Rd, Athens, Ga 30602" />
+					</div>
+
+					<div class="form-group">
+						<label for="cardType">Card Type</label>: <input type="cardType"
+							id="cardType" name="cardType" class="form-control"
+							placeholder="Enter Card Type" />
+					</div>
+
+					<div class="form-group">
+						<label for="cardNumber">Card Number</label>: <input type="cardNumber"
+							id="cardNumber" name="cardNumber" class="form-control"
+							placeholder="Enter Card Number" />
+					</div>
+
+					<div class="form-group">
+						<label for="expirationDate">Expiration Date</label>: <input type="expirationDate"
+							id="expirationDate" name="expirationDate" class="form-control"
+							placeholder="Ex: 00/00" />
+					</div>
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<input type="submit" name="submit" id="submit"
+									class="form-control btn btn-primary" value="Submit" />
+							</div>
+						</div>
+					</div>
+				</form>
+				<div class="form-group">
+						<span>No Changes? <a href="/" th:href="@{/index}">Return
+								here</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
